@@ -13,7 +13,7 @@ def read():
 
 def save(book):
     with open('phoneBook.json', 'w', encoding="utf-8") as data:
-        json.dump(book, data, indent=4) #, ensure_ascii=False)
+        json.dump(book, data, indent=4, ensure_ascii=False)
 
 
 def create_contact(book):
