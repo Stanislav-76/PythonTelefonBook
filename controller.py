@@ -11,7 +11,6 @@ def start():
             Model.create_contact(book)
         if n == 2:
             View.view(book)
-            break
         if n == 3:
             Model.update_contact(book)
         if n == 4:
