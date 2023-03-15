@@ -5,7 +5,7 @@ import time
 
 def menu():
     time.sleep(1)
-    system('clear')
+    system('clear') # system('cmd /c cls')
     move = {1: 'Создать контакт', 2: 'Прочитать книгу',
             3: 'Изменить контакт', 4: 'Удалить контакт', 5: 'Выход'}
     print('Выберите операцию', move)
