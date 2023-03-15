@@ -2,18 +2,17 @@ import Model
 import View
 
 
-
-def start():    
+def start():
     book = Model.read()
-    while True:        
+    while True:
         n = View.menu()
         if n == 1:
-            Model.create_contact(book)
+            book = Model.create_contact(book)
         if n == 2:
-            View.view(book)
+            View.view2(book)
         if n == 3:
             Model.update_contact(book)
         if n == 4:
             Model.del_contact(book)
         if n == 5:
-            break        
+            break

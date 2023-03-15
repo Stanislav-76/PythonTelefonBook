@@ -1,5 +1,4 @@
 import json
-import controller
 
 
 def read():
@@ -27,7 +26,8 @@ def create_contact(book):
     print('\nКонтакт создан')
     book = sort(book)
     save(book)
-
+    print(book)
+    return book
 
 def update_contact(book):
     return
