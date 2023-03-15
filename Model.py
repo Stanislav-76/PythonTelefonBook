@@ -17,17 +17,17 @@ def save(book):
 
 
 def create_contact(book):
-    first_name = input("Введите имя: ")
     last_name = input("Введите фамилию: ")
+    first_name = input("Введите имя: ")
     patronymic = input("Введите отчество: ")
     num_tel = input("Введите телефон: ")
-    contact = {"First_name": first_name, "Last_name": last_name,
+    contact = {"Last_name": last_name, "First_name": first_name,
                "Patronymic": patronymic, "Telefon": num_tel}
-    # book = controller.book
     book.append(contact)
     print('\nКонтакт создан')
     book = sort(book)
     save(book)
+
 
 def update_contact(book):
     return
@@ -36,12 +36,14 @@ def update_contact(book):
 def del_contact(book):
     return
 
+
 def sort(book):
     lst = []
     book_sort = []
     for note in book:
-        lst.append([note['Last_name'], note['First_name'], note["Patronymic"], note["Telefon"]])
+        lst.append([note['Last_name'], note['First_name'],
+                   note["Patronymic"], note["Telefon"]])
     lst.sort()
     for note in lst:
-        book_sort.append([note[1], note[0], note[2], note[3]])
+        book_sort.append({"Last_name": note[0], "First_name": note[1], "Patronymic": note[2], "Telefon": note[3]})
     return book_sort
