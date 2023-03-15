@@ -9,13 +9,23 @@ def menu():
     move = {1: 'Создать контакт', 2: 'Прочитать книгу',
             3: 'Изменить контакт', 4: 'Удалить контакт', 5: 'Выход'}
     print('Выберите операцию', move)
-    n = getwch() # input()
+    n = getwch()  # input()
     if n.isdigit() and n in '12345':
-        system('clear')
+        system('CLS')
         return int(n)
     else:
-        system('clear')
+        system('CLS')
         print('Введите из предложенных вариантов')
 
+
 def view(book):
-    return
+    print('Список контактов телефонного справочника:\n')
+    table = [['ФАМИЛИЯ', 'ИМЯ', 'ОТЧЕСТВО', 'НОМЕР ТЕЛЕФОНА']]
+    for contact in book:
+        contact = list(contact.values())
+        table.append(contact)
+    for ind, item in enumerate(table):
+        if ind == 0:
+            ind = '№'
+        print(ind, '\t', *map(lambda x: str(x) + ' ' * (20 - len(x)), item))
+    time.sleep(30)
