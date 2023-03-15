@@ -4,7 +4,7 @@ import controller
 
 def read():
     try:
-        with open('notes.json', 'r', encoding="utf-8") as data:
+        with open('phoneBook.json', 'r', encoding="utf-8") as data:
             book = json.loads(data.read())
         return book
     except:
@@ -12,16 +12,16 @@ def read():
 
 
 def save(book):
-    with open('notes.json', 'w', encoding="utf-8") as data:
-        json.dump(book, data, indent=4, ensure_ascii=False)
+    with open('phoneBook.json', 'w', encoding="utf-8") as data:
+        json.dump(book, data, indent=4) #, ensure_ascii=False)
 
 
 def create_contact(book):
-    first_name = input("Введите имя: ")
     last_name = input("Введите фамилию: ")
+    first_name = input("Введите имя: ")
     patronymic = input("Введите отчество: ")
     num_tel = input("Введите телефон: ")
-    contact = {"First_name": first_name, "Last_name": last_name,
+    contact = {"Last_name": last_name, "First_name": first_name, 
                "Patronymic": patronymic, "Telefon": num_tel}
     # book = controller.book
     book.append(contact)
