@@ -1,4 +1,6 @@
 import json
+import View
+from os import system
 
 
 def read():
@@ -30,7 +32,20 @@ def create_contact(book):
     return book
 
 def update_contact(book):
-    return
+    View.view(book)
+    contact_for_upd = input('Введите номер контакта для обновления: ')
+    if contact_for_upd.isdigit() and int(contact_for_upd) <= len(book):
+        system('CLS')
+        contact_for_upd = int(contact_for_upd)
+    else:
+        system('CLS')
+        print('Такого контакта не существует')
+    # print(book[contact_for_upd-1])
+    new_number = input(f'Введите новый номер телефона пользлвателя {contact_for_upd}: ')
+    book[contact_for_upd-1]['Telefon'] = new_number
+    # print(book[contact_for_upd-1])
+    print(f'\nКонтакт {contact_for_upd} обновлен')
+    save(book)
 
 
 def del_contact(book):
