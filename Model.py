@@ -1,4 +1,5 @@
 import json
+from os import system
 import time
 import View
 
@@ -11,11 +12,9 @@ def read():
     except:
         return []
 
-
 def save(book):
     with open('phoneBook.json', 'w', encoding="utf-8") as data:
         json.dump(book, data, indent=4, ensure_ascii=False)
-
 
 def create_contact(book):
     last_name = input("Введите фамилию: ")
@@ -30,9 +29,20 @@ def create_contact(book):
     print('\nКонтакт создан')
     return book
 
-
 def update_contact(book):
-    return
+    View.view(book)
+    contact_change = input("Введите номер контакта для обновления: ")
+    if contact_change.isdigit() and int(contact_change) <= len(book):
+        system("CLS")
+        contact_change = int(contact_change)
+        new_number = input(f"Введите новый номер телефона пользователя {contact_change}: ")
+        book[contact_change-1]["Telefon"] = new_number
+        print(f"\nКонтакт {contact_change} изменен")
+        save(book)
+    else:
+        system("CLS")
+        print("В книге нет такого контакта")
+    return book
 
 
 def del_contact(book):
@@ -42,9 +52,11 @@ def del_contact(book):
     num_contact = input('Какой номер контакта удалить?: ')
     if num_contact.isdigit() and int(num_contact) <= len(book):
         book.pop(int(num_contact)-1)
-    save(book)
-    print('\nКонтакт удален')
-    return book
+        save(book)
+        print('\nКонтакт удален')
+        return book
+    else:
+        print("Неверно введен номер контакта")        
 
 
 def sort(book):

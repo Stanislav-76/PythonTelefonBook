@@ -28,8 +28,8 @@ def view(book):
         if ind == 0:
             ind = '№'
         print(ind, '\t', *map(lambda x: str(x) + ' ' * (20 - len(x)), item))
-    print("\nНажмите Enter для продолжения")
-    input()
+    # print("\nНажмите Enter для продолжения")
+    # input()
     # time.sleep(30)
 
 
