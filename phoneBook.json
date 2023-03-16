@@ -1,20 +1,38 @@
 [
     {
-        "Last_name": "Астан",
-        "First_name": "Иван",
-        "Patronymic": "54",
-        "Telefon": "56456"
-    },
-    {
-        "Last_name": "Борисов",
-        "First_name": "ц",
-        "Patronymic": "ап",
-        "Telefon": "5"
+        "Last_name": "Большова",
+        "First_name": "Наталия",
+        "Patronymic": "Андреевна",
+        "Telefon": "494973"
     },
     {
         "Last_name": "Иванов",
+        "First_name": "Иван",
+        "Patronymic": "Иванович",
+        "Telefon": "938764"
+    },
+    {
+        "Last_name": "Литвинова",
+        "First_name": "Лиза",
+        "Patronymic": "Евгеньевна",
+        "Telefon": "9494757"
+    },
+    {
+        "Last_name": "Петров",
+        "First_name": "Петр",
+        "Patronymic": "Петрович",
+        "Telefon": "948653"
+    },
+    {
+        "Last_name": "Сидоров",
         "First_name": "Арсений",
-        "Patronymic": "ГГ",
-        "Telefon": "& C:/Users/37529/AppData/Local/Programs/Python/Python310/python.exe c:/Users/37529/Desktop/PythonTelefonBook/Model.py"
+        "Patronymic": "Иванович",
+        "Telefon": "48875"
+    },
+    {
+        "Last_name": "Синичкина",
+        "First_name": "Марина",
+        "Patronymic": "Ивановна",
+        "Telefon": "44943"
     }
 ]

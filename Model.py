@@ -54,10 +54,10 @@ def update_contact(book):
             if n == 4:
                 new_number = input(f"Введите новый номер телефона пользователя {contact_change}: ")
                 book[contact_change-1]["Telefon"] = new_number
+            save(book)
+            print(f"\nКонтакт {contact_change} изменен")
         else:
             print('Повторите попытку.')
-        print(f"\nКонтакт {contact_change} изменен")
-        save(book)
     else:
         system("CLS")
         print("В книге нет такого контакта")
@@ -68,7 +68,7 @@ def del_contact(book):
     print("\nПросмотрите контакты и после введите номер контакта для удаления\n")
     time.sleep(1)
     View.view(book)
-    num_contact = input('Какой номер контакта удалить?: ')
+    num_contact = input('\nВыберите контакт для удаления: ')
     if num_contact.isdigit() and int(num_contact) <= len(book):
         book.pop(int(num_contact)-1)
         save(book)
