@@ -2,7 +2,7 @@ import json
 from os import system
 import time
 import View
-
+from msvcrt import getwch
 
 def read():
     try:
@@ -37,8 +37,25 @@ def update_contact(book):
     if contact_change.isdigit() and int(contact_change) <= len(book):
         system("CLS")
         contact_change = int(contact_change)
-        new_number = input(f"Введите новый номер телефона пользователя {contact_change}: ")
-        book[contact_change-1]["Telefon"] = new_number
+        what_to_change = {1: 'Фамилия', 2: 'Имя', 3: 'Отчество', 4: 'Номер телеофона'}
+        print(f'Выберите, что хотите изменить: {what_to_change}')
+        n = getwch()  # input()
+        if n.isdigit() and n in '1234':
+            n = int(n)
+            if n == 1:
+                new_last_name = input(f"Введите новую фамилию пользователя {contact_change}: ")
+                book[contact_change-1]["Last_name"] = new_last_name
+            if n == 2:
+                new_first_name = input(f"Введите новое имя пользователя {contact_change}: ")
+                book[contact_change-1]["First_name"] = new_first_name
+            if n == 3:
+                new_patronymic = input(f"Введите новое отчество пользователя {contact_change}: ")
+                book[contact_change-1]["Patronymic"] = new_patronymic
+            if n == 4:
+                new_number = input(f"Введите новый номер телефона пользователя {contact_change}: ")
+                book[contact_change-1]["Telefon"] = new_number
+        else:
+            print('Повторите попытку.')
         print(f"\nКонтакт {contact_change} изменен")
         save(book)
     else:
