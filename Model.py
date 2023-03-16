@@ -30,6 +30,8 @@ def create_contact(book):
     return book
 
 def update_contact(book):
+    print("\nПросмотрите контакты и после введите номер контакта для обновления\n")
+    time.sleep(1)
     View.view(book)
     contact_change = input("Введите номер контакта для обновления: ")
     if contact_change.isdigit() and int(contact_change) <= len(book):
@@ -46,17 +48,17 @@ def update_contact(book):
 
 
 def del_contact(book):
-    print("\nПросмотрите контакты и после введите номер контакта для удаления")
-    time.sleep(2)
+    print("\nПросмотрите контакты и после введите номер контакта для удаления\n")
+    time.sleep(1)
     View.view(book)
     num_contact = input('Какой номер контакта удалить?: ')
     if num_contact.isdigit() and int(num_contact) <= len(book):
         book.pop(int(num_contact)-1)
         save(book)
         print('\nКонтакт удален')
-        return book
     else:
         print("Неверно введен номер контакта")        
+    return book
 
 
 def sort(book):
