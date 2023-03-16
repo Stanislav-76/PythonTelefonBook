@@ -1,38 +1,14 @@
 [
     {
-        "Last_name": "Антонов",
-        "First_name": "П",
-        "Patronymic": "ава",
-        "Telefon": "5"
-    },
-    {
-        "Last_name": "Борисов",
-        "First_name": "ц",
-        "Patronymic": "ап",
-        "Telefon": "5"
-    },
-    {
-        "Last_name": "Борисов",
-        "First_name": "ц",
-        "Patronymic": "ап",
-        "Telefon": "5"
-    },
-    {
-        "Last_name": "Борисов",
-        "First_name": "ц",
-        "Patronymic": "ап",
-        "Telefon": "5"
-    },
-    {
-        "Last_name": "Борисов",
-        "First_name": "ц",
-        "Patronymic": "ап",
-        "Telefon": "5"
-    },
-    {
         "Last_name": "Астан",
         "First_name": "пва",
         "Patronymic": "54",
+        "Telefon": "5"
+    },
+    {
+        "Last_name": "Борисов",
+        "First_name": "ц",
+        "Patronymic": "ап",
         "Telefon": "5"
     }
 ]

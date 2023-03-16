@@ -2,6 +2,7 @@ import json
 import time
 import View
 
+
 def read():
     try:
         with open('phoneBook.json', 'r', encoding="utf-8") as data:
@@ -29,6 +30,7 @@ def create_contact(book):
     print('\nКонтакт создан')
     return book
 
+
 def update_contact(book):
     return
 
@@ -37,9 +39,10 @@ def del_contact(book):
     print("\nПросмотрите контакты и после введите номер контакта для удаления")
     time.sleep(2)
     View.view(book)
-    num_contact = int(input('Какой номер контакта удалить?: '))
-    book.pop(num_contact-1)       
-    save(book)   
+    num_contact = input('Какой номер контакта удалить?: ')
+    if num_contact.isdigit() and int(num_contact) <= len(book):
+        book.pop(int(num_contact)-1)
+    save(book)
     print('\nКонтакт удален')
     return book
 
@@ -52,5 +55,6 @@ def sort(book):
                    note["Patronymic"], note["Telefon"]])
     lst.sort()
     for note in lst:
-        book_sort.append({"Last_name": note[0], "First_name": note[1], "Patronymic": note[2], "Telefon": note[3]})
+        book_sort.append(
+            {"Last_name": note[0], "First_name": note[1], "Patronymic": note[2], "Telefon": note[3]})
     return book_sort
