@@ -44,12 +44,12 @@ def view2(book):
     while True:
         system('CLS')
         print('Список контактов телефонного справочника:\n')
-        size = (len(table)+3)//5
-        print(f'[{key+1}/{size}]')
+        size = (len(table) + 3) // 5
+        print(f'[{key + 1}/{size}]')
         print('№', '\t', *map(lambda x: str(x) +
               ' ' * (20 - len(x)), table[0]))
-        for ind, item in enumerate(table[key*5+1:key*5+6]):
-            print(key*5+ind+1, '\t', *
+        for ind, item in enumerate(table[key*5 + 1: key*5 + 6]):
+            print(key*5 + ind + 1, '\t', *
                   map(lambda x: str(x) + ' ' * (20 - len(x)), item))
         print('\nНажмите для просмотра   <- ->, a или d,    для выхода в меню - q')
         key_ch = getwch()
