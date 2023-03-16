@@ -46,6 +46,7 @@ def update_contact(book):
     # print(book[contact_for_upd-1])
     print(f'\nКонтакт {contact_for_upd} обновлен')
     save(book)
+    return book
 
 
 def del_contact(book):
