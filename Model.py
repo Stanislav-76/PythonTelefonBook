@@ -35,12 +35,22 @@ def update_contact(book):
     View.view(book)
     contact_change = input("Введите номер контакта для обновления: ")
     if contact_change.isdigit() and int(contact_change) <= len(book):
-        system("CLS")
         contact_change = int(contact_change)
-        new_number = input(f"Введите новый номер телефона пользователя {contact_change}: ")
-        book[contact_change-1]["Telefon"] = new_number
-        print(f"\nКонтакт {contact_change} изменен")
+        system("CLS")
+        print("Выберите: 1.  Изменить фамилию 2. Изменить имя. 3. Изменить отчество 4. Изменит телефон")
+        num = input()
+        if num.isdigit()and (1 <= int(num) <= 4):
+            num = int(num)
+            if num == 1:
+                book[contact_change-1]["Last_name"] = input(f"Введите фамилию пользователя {contact_change}: ")
+            if num == 2:
+                book[contact_change-1]["First_name"] = input(f"Введите имя пользователя {contact_change}: ")
+            if num == 3:
+                book[contact_change-1]["Patronymic"] = input(f"Введите отчество пользователя {contact_change}: ")
+            if num == 4:
+                book[contact_change-1]["Telefon"] = input(f"Введите новый номер телефона пользователя {contact_change}: ")
         save(book)
+        print(f"\nКонтакт {contact_change} изменен")
     else:
         system("CLS")
         print("В книге нет такого контакта")
