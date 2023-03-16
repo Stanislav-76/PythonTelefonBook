@@ -1,5 +1,6 @@
 import json
-
+import time
+import View
 
 def read():
     try:
@@ -23,10 +24,9 @@ def create_contact(book):
     contact = {"Last_name": last_name, "First_name": first_name,
                "Patronymic": patronymic, "Telefon": num_tel}
     book.append(contact)
-    print('\nКонтакт создан')
     book = sort(book)
     save(book)
-    print(book)
+    print('\nКонтакт создан')
     return book
 
 def update_contact(book):
@@ -34,7 +34,14 @@ def update_contact(book):
 
 
 def del_contact(book):
-    return
+    print("\nПросмотрите контакты и после введите номер контакта для удаления")
+    time.sleep(2)
+    View.view(book)
+    num_contact = int(input('Какой номер контакта удалить?: '))
+    book.pop(num_contact-1)       
+    save(book)   
+    print('\nКонтакт удален')
+    return book
 
 
 def sort(book):

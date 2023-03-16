@@ -13,6 +13,6 @@ def start():
         if n == 3:
             Model.update_contact(book)
         if n == 4:
-            Model.del_contact(book)
+            book = Model.del_contact(book)
         if n == 5:
             break
