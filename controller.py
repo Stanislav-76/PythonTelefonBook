@@ -9,7 +9,7 @@ def start():
         if n == 1:
             book = Model.create_contact(book)
         if n == 2:
-            View.view(book)
+            View.view2(book)
         if n == 3:
             Model.update_contact(book)
         if n == 4:

@@ -18,21 +18,21 @@ def menu():
         print('Введите из предложенных вариантов')
 
 
-# def view(book):
-#     print('Список контактов телефонного справочника:\n')
-#     table = [['ФАМИЛИЯ', 'ИМЯ', 'ОТЧЕСТВО', 'НОМЕР ТЕЛЕФОНА']]
-#     for contact in book:
-#         contact = list(contact.values())
-#         table.append(contact)
-#     for ind, item in enumerate(table):
-#         if ind == 0:
-#             ind = '№'
-#         print(ind, '\t', *map(lambda x: str(x) + ' ' * (20 - len(x)), item))
-#     print("\nНажмите Enter для продолжения")
-#     input()
-
-
 def view(book):
+    print('Список контактов телефонного справочника:\n')
+    table = [['ФАМИЛИЯ', 'ИМЯ', 'ОТЧЕСТВО', 'НОМЕР ТЕЛЕФОНА']]
+    for contact in book:
+        contact = list(contact.values())
+        table.append(contact)
+    for ind, item in enumerate(table):
+        if ind == 0:
+            ind = '№'
+        print(ind, '\t', *map(lambda x: str(x) + ' ' * (20 - len(x)), item))
+    print("\nНажмите Enter для продолжения")
+    input()
+
+
+def view2(book):
     key = 0
     if book == []:
         return book
